@@ -9,7 +9,6 @@
   "bugs": "https://github.com/SharryXu/hexo-tag-replace/issues",
   "homepage": "https://github.com/SharryXu/hexo-tag-replace",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "hexo",
