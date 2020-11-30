@@ -1,0 +1,30 @@
+{
+  "name": "hexo-tag-replace",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharryXu/hexo-tag-replace.git"
+  },
+  "bugs": "https://github.com/SharryXu/hexo-tag-replace/issues",
+  "homepage": "https://github.com/SharryXu/hexo-tag-replace",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hexo",
+    "plugin",
+    "tag",
+    "replace",
+    "path"
+  ],
+  "author": {
+    "name": "Sharry Xu",
+    "email": "sharry.xu@outlook.com",
+    "url": "https://github.com/SharryXu"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
