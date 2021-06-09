@@ -47,7 +47,7 @@ if (enable === true) {
         if (path.startsWith('http')) {
           return s;
         } else {
-          return '![' + name + '](' + combine(imageAbsolutePath, postName, path) + ')';
+          return '[' + name + '](' + combine(imageAbsolutePath, postName, path) + ')';
         }
       });
     }
