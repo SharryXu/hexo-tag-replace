@@ -31,18 +31,24 @@ if (hexo.config.tag_replace && hexo.config.tag_replace.enable) {
 }
 
 if (enable === true) {
-  const mdImagePattern = /!\[(.*?)\]\((.*?)\)/g;
+  const mdImageOrLinkPattern = /\[(.*?)\]\((.*?)\)/g;
   const postNamePattern = /.*?\/(.*?)\.md$/g;
 
   hexo.extend.filter.register('before_post_render', function (data) {
     if (data.source.endsWith(".md")) {
       let postName = data.source.replace(postNamePattern, "$1");
 
-      data.content = data.content.replace(mdImagePattern, (s) => {
-        let name = s.replace(mdImagePattern, "$1");
-        let path = s.replace(mdImagePattern, "$2");
+      // Process the image/link tag.
+      data.content = data.content.replace(mdImageOrLinkPattern, (s) => {
+        let name = s.replace(mdImageOrLinkPattern, "$1");
+        let path = s.replace(mdImageOrLinkPattern, "$2");
 
-        return '![' + name + '](' + combine(imageAbsolutePath, postName, path) + ')';
+        // Don't touch the absolute path.
+        if (path.startsWith('http')) {
+          return s;
+        } else {
+          return '![' + name + '](' + combine(imageAbsolutePath, postName, path) + ')';
+        }
       });
     }
 
